@@ -17,7 +17,6 @@
 </p>
 
 </div>
----
 
 ## <img src="assets/Icons_link.png" width="22"> About Me
 
