@@ -125,7 +125,7 @@ Linux, Docker, VPS, reverse proxies and self-hosting.
 ## <img src="assets/Memory.png" width="22"> GitHub Activity
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Ayank-ssh/ayank-ssh@21cdc0e7496fae1717c65d05c2a409bd1ae74f66/contributions.svg" width="100%" alt="Ayank's GitHub contribution calendar">
+  <img src="https://cdn.jsdelivr.net/gh/Ayank-ssh/ayank-ssh@gh-pages/contributions.svg" width="100%" alt="Ayank's GitHub contribution calendar">
 </p>
 
 <p align="center">
