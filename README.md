@@ -1,18 +1,20 @@
 <div align="center">
 
-<img src="assets/banner.png" width="100%" alt="Ayank — Student Developer Builder">
+<img src="assets/banner.png" width="100%" alt="Ayank — Student • Developer • Builder">
 
 <br>
 
-<a href="https://github.com/Ayank-ssh">
-  <img src="https://img.shields.io/badge/GITHUB-AYANK--SSH-16181d?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=0b0d10">
-</a>
-<a href="https://github.com/Ayank-ssh?tab=followers">
-  <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&color=ff3b30&labelColor=0b0d10&label=FOLLOWERS">
-</a>
-<a href="https://github.com/Ayank-ssh/ayank-ssh">
-  <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?style=for-the-badge&color=d7263d&labelColor=0b0d10&label=UPDATED">
-</a>
+<p>
+  <a href="https://github.com/Ayank-ssh">
+    <img src="https://img.shields.io/badge/GITHUB-AYANK--SSH-0B0D10?style=for-the-badge&logo=github&logoColor=F2F4F7&labelColor=111318" alt="GitHub">
+  </a>
+  <a href="https://github.com/Ayank-ssh?tab=followers">
+    <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&label=FOLLOWERS&color=D7263D&labelColor=111318" alt="Followers">
+  </a>
+  <a href="https://github.com/Ayank-ssh/ayank-ssh">
+    <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?style=for-the-badge&label=UPDATED&color=FF3B30&labelColor=111318" alt="Last update">
+  </a>
+</p>
 
 </div>
 
@@ -40,10 +42,10 @@ I spend most of my time around **backend development, automation, Discord bots, 
 A security-focused project centered around **automation, protection, moderation, and reliability**.
 
 <p>
-  <img src="https://img.shields.io/badge/SECURITY-b71c1c?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/AUTOMATION-d7263d?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/OPEN%20SOURCE-9aa4ad?style=flat-square&labelColor=111318">
+  <img src="https://img.shields.io/badge/SECURITY-B51F33?style=flat-square&labelColor=111318" alt="Security">
+  <img src="https://img.shields.io/badge/AUTOMATION-D7263D?style=flat-square&labelColor=111318" alt="Automation">
+  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318" alt="Discord">
+  <img src="https://img.shields.io/badge/OPEN%20SOURCE-9AA4AD?style=flat-square&labelColor=111318" alt="Open source">
 </p>
 
 ---
@@ -53,30 +55,19 @@ A security-focused project centered around **automation, protection, moderation,
 <table>
 <tr>
 <td width="150"><b>Languages</b></td>
-<td>
-<img src="https://skillicons.dev/icons?i=python,js,ts" height="38">
-</td>
+<td><img src="https://skillicons.dev/icons?i=python,js,ts" height="38"></td>
 </tr>
-
 <tr>
 <td><b>Frontend</b></td>
-<td>
-<img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="38">
-</td>
+<td><img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="38"></td>
 </tr>
-
 <tr>
 <td><b>Backend</b></td>
-<td>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="38">
-</td>
+<td><img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="38"></td>
 </tr>
-
 <tr>
 <td><b>Tools & Infra</b></td>
-<td>
-<img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="38">
-</td>
+<td><img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="38"></td>
 </tr>
 </table>
 
@@ -99,7 +90,6 @@ Bots, utilities, automations and server tooling.
 
 </td>
 </tr>
-
 <tr>
 <td>
 
@@ -121,12 +111,12 @@ Linux, Docker, VPS, reverse proxies and self-hosting.
 ## <img src="assets/Icons_link.png" width="22"> Connect
 
 <p>
-<a href="https://instagram.com/kyros.ssh">
-  <img src="https://img.shields.io/badge/INSTAGRAM-kyros.ssh-ff1744?style=for-the-badge&logo=instagram&logoColor=ffffff&labelColor=111318">
-</a>
-<a href="https://discord.gg/hff6f4fVPE">
-  <img src="https://img.shields.io/badge/DISCORD-JOIN%20SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=ffffff&labelColor=111318">
-</a>
+  <a href="https://instagram.com/kyros.ssh">
+    <img src="https://img.shields.io/badge/INSTAGRAM-kyros.ssh-FF3B30?style=for-the-badge&logo=instagram&logoColor=FFFFFF&labelColor=111318" alt="Instagram">
+  </a>
+  <a href="https://discord.gg/hff6f4fVPE">
+    <img src="https://img.shields.io/badge/DISCORD-JOIN%20SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF&labelColor=111318" alt="Discord">
+  </a>
 </p>
 
 ---
@@ -134,13 +124,7 @@ Linux, Docker, VPS, reverse proxies and self-hosting.
 ## <img src="assets/Memory.png" width="22"> GitHub Activity
 
 <p align="center">
-  <img src="https://img.shields.io/github/repos/Ayank-ssh?style=for-the-badge&color=d7263d&labelColor=111318&label=PUBLIC%20REPOS">
-  <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&color=ff3b30&labelColor=111318&label=FOLLOWERS">
-  <img src="https://img.shields.io/github/stars/Ayank-ssh?style=for-the-badge&color=f05a28&labelColor=111318&label=STARS">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Ayank-ssh/ayank-ssh/output/github-contribution-grid-snake-dark.svg" width="95%" alt="GitHub contribution graph">
+  <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub contribution graph">
 </p>
 
 ---
