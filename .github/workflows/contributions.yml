@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate contribution graph
+      - name: Generate GitHub-style contribution graph
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: Ayank-ssh
@@ -35,14 +35,10 @@ jobs:
           if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
             git worktree add --detach /tmp/gh-pages origin/gh-pages
           else
-            mkdir -p /tmp/gh-pages
-            git -C /tmp/gh-pages init
-            git -C /tmp/gh-pages checkout --orphan gh-pages
-            git -C /tmp/gh-pages remote add origin "${{ github.server_url }}/${{ github.repository }}.git"
+            git clone --branch gh-pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" /tmp/gh-pages
           fi
 
           cp dist/contributions.svg /tmp/gh-pages/contributions.svg
-
           cd /tmp/gh-pages
           git add contributions.svg
 

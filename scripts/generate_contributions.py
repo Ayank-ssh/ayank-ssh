@@ -2,7 +2,6 @@ import json
 import math
 import os
 import urllib.request
-from datetime import date, timedelta
 from pathlib import Path
 
 LOGIN = os.environ.get("GITHUB_USER", "Ayank-ssh")
@@ -10,9 +9,9 @@ TOKEN = os.environ["GITHUB_TOKEN"]
 OUT = Path("dist/contributions.svg")
 
 QUERY = """
-query($login:String!, $from:DateTime!, $to:DateTime!) {
+query($login:String!) {
   user(login:$login) {
-    contributionsCollection(from:$from, to:$to) {
+    contributionsCollection {
       contributionCalendar {
         totalContributions
         weeks {
@@ -27,8 +26,12 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 }
 """
 
-def gql(variables):
-    body = json.dumps({"query": QUERY, "variables": variables}).encode("utf-8")
+def gql():
+    body = json.dumps({
+        "query": QUERY,
+        "variables": {"login": LOGIN},
+    }).encode("utf-8")
+
     req = urllib.request.Request(
         "https://api.github.com/graphql",
         data=body,
@@ -40,27 +43,23 @@ def gql(variables):
         },
         method="POST",
     )
+
     with urllib.request.urlopen(req, timeout=30) as response:
         data = json.load(response)
+
     if data.get("errors"):
         raise RuntimeError(data["errors"])
+
     return data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
 
-today = date.today()
-end = today + timedelta(days=(6 - today.weekday()) % 7)
-start = end - timedelta(days=363)
-
-calendar = gql({
-    "login": LOGIN,
-    "from": start.isoformat() + "T00:00:00Z",
-    "to": (end + timedelta(days=1)).isoformat() + "T00:00:00Z",
-})
+calendar = gql()
+weeks = calendar["weeks"]
+total = int(calendar["totalContributions"])
 
 counts = {
-    d["date"]: int(d["contributionCount"])
-    for week in calendar["weeks"]
-    for d in week["contributionDays"]
-    if d["date"] <= today.isoformat()
+    day["date"]: int(day["contributionCount"])
+    for week in weeks
+    for day in week["contributionDays"]
 }
 
 positive = sorted(v for v in counts.values() if v > 0)
@@ -68,13 +67,14 @@ positive = sorted(v for v in counts.values() if v > 0)
 def quantile(values, p):
     if not values:
         return 0
-    return values[min(len(values) - 1, max(0, math.ceil(len(values) * p) - 1))]
+    idx = min(len(values) - 1, max(0, math.ceil(len(values) * p) - 1))
+    return values[idx]
 
-q1 = quantile(positive, .25)
-q2 = quantile(positive, .50)
-q3 = quantile(positive, .75)
+q1 = quantile(positive, 0.25)
+q2 = quantile(positive, 0.50)
+q3 = quantile(positive, 0.75)
 
-# Red/crimson palette matching the profile.
+# Same profile palette, but GitHub-native intensity progression.
 palette = ["#16181D", "#3B1017", "#65121D", "#A61B2B", "#FF3B30"]
 
 def color(count):
@@ -88,79 +88,74 @@ def color(count):
         return palette[3]
     return palette[4]
 
-cell = 12
+# Native-like sizing: compact cells, 7 weekday rows, ~53 week columns.
+cell = 11
 gap = 3
 step = cell + gap
-label_w = 30
-left = 12
-right = 16
-top = 40
-bottom = 34
+left = 32
+right = 20
+top = 34
+bottom = 30
+week_count = len(weeks)
 
-weeks = []
-cursor = start - timedelta(days=(start.weekday() + 1) % 7)
-last = end
-while cursor <= last:
-    weeks.append([cursor + timedelta(days=i) for i in range(7)])
-    cursor += timedelta(days=7)
-
-width = left + label_w + len(weeks) * step + right
+width = left + week_count * step + right
 height = top + 7 * step + bottom
-total = sum(counts.values())
 
 parts = [
     f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img">',
-    f'<title>{LOGIN} — GitHub contribution activity</title>',
+    f'<title>{LOGIN} GitHub contributions</title>',
     f'<desc>{total} contributions in the last year.</desc>',
     '<style>'
-    '.title{font:600 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#F2F4F7}'
-    '.sub{font:10px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#9AA4AD}'
+    '.summary{font:600 11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#F2F4F7}'
     '.label{font:9px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#707A84}'
     '</style>',
-    '<rect width="100%" height="100%" rx="12" fill="#0B0D10"/>',
-    f'<text x="{left}" y="17" class="title">{total} contributions in the last year</text>',
-    f'<text x="{width-right-78}" y="17" class="sub">Less</text>',
+    f'<text x="{left}" y="12" class="summary">{total} contributions in the last year</text>',
 ]
 
-# Month labels like GitHub.
-last_month = None
+# Month labels. Use the first week of each month, matching GitHub's layout.
+seen_months = set()
 for wi, week in enumerate(weeks):
-    first_real = next((d for d in week if d <= today), None)
-    if not first_real:
-        continue
-    key = (first_real.year, first_real.month)
-    if key != last_month:
-        x = left + label_w + wi * step
-        parts.append(f'<text x="{x}" y="31" class="label">{first_real.strftime("%b")}</text>')
-        last_month = key
+    for day in week["contributionDays"]:
+        if day["date"][:7] in seen_months:
+            continue
+        month_key = day["date"][:7]
+        # Don't show a label too far into a week; first appearance is enough.
+        parts.append(
+            f'<text x="{left + wi * step}" y="27" class="label">{day["date"][5:7]}</text>'
+        )
+        seen_months.add(month_key)
+        break
 
 # Weekday labels.
 for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
     y = top + row * step + 9
-    parts.append(f'<text x="{left}" y="{y}" class="label">{label}</text>')
+    parts.append(f'<text x="0" y="{y}" class="label">{label}</text>')
 
 for wi, week in enumerate(weeks):
-    for row, day in enumerate(week):
-        if day > today or day < start:
+    for row, day in enumerate(week["contributionDays"]):
+        if row > 6:
             continue
-        n = counts.get(day.isoformat(), 0)
-        x = left + label_w + wi * step
+        x = left + wi * step
         y = top + row * step
+        n = int(day["contributionCount"])
         parts.append(
             f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.5" fill="{color(n)}">'
-            f'<title>{day.strftime("%A, %B %d, %Y")}: {n} contribution{"s" if n != 1 else ""}</title>'
+            f'<title>{day["date"]}: {n} contribution{"s" if n != 1 else ""}</title>'
             '</rect>'
         )
 
-# Legend, compact like GitHub.
-legend_x = width - 61
+# GitHub-style legend.
+legend_y = height - 14
+legend_x = width - 74
+parts.append(f'<text x="{legend_x - 21}" y="{legend_y}" class="label">Less</text>')
 for i, fill in enumerate(palette):
     parts.append(
-        f'<rect x="{legend_x + i*14}" y="8" width="10" height="10" rx="2.5" fill="{fill}"/>'
+        f'<rect x="{legend_x + i*14}" y="{legend_y-10}" width="10" height="10" rx="2.5" fill="{fill}"/>'
     )
-parts.append(f'<text x="{legend_x + len(palette)*14 + 5}" y="17" class="sub">More</text>')
+parts.append(f'<text x="{legend_x + len(palette)*14 + 3}" y="{legend_y}" class="label">More</text>')
 
-parts.append("</svg>")
+parts.append('</svg>')
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text("\n".join(parts), encoding="utf-8")
-print(f"Generated {OUT}: {total} contributions in the last year.")
+print(f"Generated {OUT}: {total} contributions.")
