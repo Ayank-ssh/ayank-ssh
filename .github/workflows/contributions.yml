@@ -1,9 +1,6 @@
 name: Sync Contribution Graph
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
     - cron: "17 0 * * *"
@@ -31,20 +28,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages || true
 
-          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
-            git fetch origin gh-pages
+          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
             git worktree add --detach /tmp/gh-pages origin/gh-pages
           else
             git worktree add --detach /tmp/gh-pages
             git -C /tmp/gh-pages checkout --orphan gh-pages
           fi
 
-          mkdir -p /tmp/gh-pages
-          rm -f /tmp/gh-pages/contributions.svg
           cp dist/contributions.svg /tmp/gh-pages/contributions.svg
-
           cd /tmp/gh-pages
           git add contributions.svg
-          git diff --cached --quiet || git commit -m "chore: sync contribution graph"
-          git push origin HEAD:gh-pages
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync contribution graph"
+            git push origin HEAD:gh-pages
+          fi
