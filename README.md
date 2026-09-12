@@ -1,14 +1,18 @@
 <div align="center">
 
-<img src="assets/banner.png" width="100%" alt="Ayank - Student, Developer, Builder">
+<img src="assets/banner.png" width="100%" alt="Ayank — Student Developer Builder">
 
 <br>
 
-<p>
-  <img src="https://komarev.com/ghpvc/?username=ayank-ssh&label=PROFILE%20VIEWS&color=8B5CF6&style=flat-square">
-  <img src="https://img.shields.io/github/followers/Ayank-ssh?label=FOLLOWERS&style=flat-square&color=22D3EE">
-  <img src="https://img.shields.io/github/stars/Ayank-ssh?label=STARS&style=flat-square&color=F472B6">
-</p>
+<a href="https://github.com/Ayank-ssh">
+  <img src="https://img.shields.io/badge/GITHUB-AYANK--SSH-16181d?style=for-the-badge&logo=github&logoColor=ffffff&labelColor=0b0d10">
+</a>
+<a href="https://github.com/Ayank-ssh?tab=followers">
+  <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&color=ff3b30&labelColor=0b0d10&label=FOLLOWERS">
+</a>
+<a href="https://github.com/Ayank-ssh/ayank-ssh">
+  <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?style=for-the-badge&color=d7263d&labelColor=0b0d10&label=UPDATED">
+</a>
 
 </div>
 
@@ -16,9 +20,9 @@
 
 ## <img src="assets/Icons_link.png" width="22"> About Me
 
-I'm **Ayank**, a student and developer who enjoys building things, breaking them, and figuring out how to make them better.
+I'm **Ayank**, a student and developer who likes turning ideas into working software.
 
-I like working on **web applications, automation, Discord bots, backend systems, infrastructure, and security-focused projects**. I'm especially interested in the stuff that happens behind the scenes — APIs, servers, databases, Linux, and making systems reliable.
+I spend most of my time around **backend development, automation, Discord bots, Linux, infrastructure, and security-focused projects**. I enjoy the full cycle — building something, breaking it, understanding why, and making it better.
 
 ```text
 > build()
@@ -29,13 +33,18 @@ I like working on **web applications, automation, Discord bots, backend systems,
 
 ---
 
-## <img src="assets/Lighting.png" width="22"> Currently Working On
+## <img src="assets/Lighting.png" width="22"> Currently Building
 
 ### [Supernova Security](https://github.com/Ayank-ssh/Supernova-Security)
 
-A security-focused project built around **automation, protection, and reliability**.
+A security-focused project centered around **automation, protection, moderation, and reliability**.
 
-`Security` `Automation` `Discord` `Web` `Open Source`
+<p>
+  <img src="https://img.shields.io/badge/SECURITY-b71c1c?style=flat-square&labelColor=111318">
+  <img src="https://img.shields.io/badge/AUTOMATION-d7263d?style=flat-square&labelColor=111318">
+  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318">
+  <img src="https://img.shields.io/badge/OPEN%20SOURCE-9aa4ad?style=flat-square&labelColor=111318">
+</p>
 
 ---
 
@@ -43,27 +52,30 @@ A security-focused project built around **automation, protection, and reliabilit
 
 <table>
 <tr>
-<td><b>Languages</b></td>
+<td width="150"><b>Languages</b></td>
 <td>
-<img src="https://skillicons.dev/icons?i=python,js,ts" height="42">
+<img src="https://skillicons.dev/icons?i=python,js,ts" height="38">
 </td>
 </tr>
+
 <tr>
 <td><b>Frontend</b></td>
 <td>
-<img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="42">
+<img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="38">
 </td>
 </tr>
+
 <tr>
 <td><b>Backend</b></td>
 <td>
-<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="42">
+<img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="38">
 </td>
 </tr>
+
 <tr>
 <td><b>Tools & Infra</b></td>
 <td>
-<img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="42">
+<img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="38">
 </td>
 </tr>
 </table>
@@ -72,44 +84,69 @@ A security-focused project built around **automation, protection, and reliabilit
 
 ## <img src="assets/Rise.png" width="22"> What I Build
 
-- <img src="assets/shield.png" width="18"> **Security & moderation systems**
-- <img src="assets/Lighting.png" width="18"> **Discord bots & automation**
-- <img src="assets/icon_write.png" width="18"> **Web apps & dashboards**
-- <img src="assets/icons_wrench.png" width="18"> **Backend services & APIs**
-- <img src="assets/python.png" width="18"> **Developer tools & scripts**
-- <img src="assets/icons_globe.png" width="18"> **Self-hosted services & infrastructure**
+<table>
+<tr>
+<td width="50%">
+
+<img src="assets/shield.png" width="20"> **Security systems**  
+Protection, moderation, anti-abuse and automation.
+
+</td>
+<td width="50%">
+
+<img src="assets/Lighting.png" width="20"> **Discord bots**  
+Bots, utilities, automations and server tooling.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img src="assets/icon_write.png" width="20"> **Web apps**  
+Dashboards, APIs and useful interfaces.
+
+</td>
+<td>
+
+<img src="assets/icons_wrench.png" width="20"> **Infrastructure**  
+Linux, Docker, VPS, reverse proxies and self-hosting.
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## <img src="assets/Icons_link.png" width="22"> Connect
 
 <p>
-  <a href="https://instagram.com/kyros.ssh">
-    <img src="https://img.shields.io/badge/Instagram-@kyros.ssh-8B5CF6?style=for-the-badge&logo=instagram&logoColor=white">
-  </a>
-  <a href="https://discord.gg/hff6f4fVPE">
-    <img src="https://img.shields.io/badge/Discord-Join%20my%20server-5865F2?style=for-the-badge&logo=discord&logoColor=white">
-  </a>
+<a href="https://instagram.com/kyros.ssh">
+  <img src="https://img.shields.io/badge/INSTAGRAM-kyros.ssh-ff1744?style=for-the-badge&logo=instagram&logoColor=ffffff&labelColor=111318">
+</a>
+<a href="https://discord.gg/hff6f4fVPE">
+  <img src="https://img.shields.io/badge/DISCORD-JOIN%20SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=ffffff&labelColor=111318">
+</a>
 </p>
 
 ---
 
-## <img src="assets/Memory.png" width="22"> GitHub
+## <img src="assets/Memory.png" width="22"> GitHub Activity
 
-<p>
-  <img src="https://img.shields.io/github/commit-activity/y/Ayank-ssh/ayank-ssh?label=YEARLY%20COMMITS&style=flat-square&color=8B5CF6">
-  <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?label=LAST%20UPDATE&style=flat-square&color=22D3EE">
-  <img src="https://img.shields.io/github/repo-size/Ayank-ssh/ayank-ssh?label=PROFILE%20REPO&style=flat-square&color=F472B6">
+<p align="center">
+  <img src="https://img.shields.io/github/repos/Ayank-ssh?style=for-the-badge&color=d7263d&labelColor=111318&label=PUBLIC%20REPOS">
+  <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&color=ff3b30&labelColor=111318&label=FOLLOWERS">
+  <img src="https://img.shields.io/github/stars/Ayank-ssh?style=for-the-badge&color=f05a28&labelColor=111318&label=STARS">
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ayank-ssh&bg_color=0D1117&color=A78BFA&line=22D3EE&point=F472B6&area=true&hide_border=true" width="95%" alt="GitHub activity graph">
+  <img src="https://raw.githubusercontent.com/Ayank-ssh/ayank-ssh/output/github-contribution-grid-snake-dark.svg" width="95%" alt="GitHub contribution graph">
 </p>
 
 ---
 
 <div align="center">
 
-### <img src="assets/Flower.png" width="20"> Stay curious &lt;/&gt; Keep building.
+<img src="assets/sparkle.png" width="18"> <b>Stay curious.</b> &nbsp; <code>&lt;/&gt;</code> &nbsp; <b>Keep building.</b> <img src="assets/sparkle.png" width="18">
 
 </div>
