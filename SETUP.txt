@@ -1,0 +1,38 @@
+AYANK GITHUB PROFILE README - SETUP
+
+1. Create/open your GitHub profile repository.
+   Repository name MUST be exactly:
+   ayank-ssh
+
+2. Extract this ZIP.
+
+3. Put README.md and the assets/ folder into that repository.
+
+4. From the repository folder, run:
+
+   git add README.md assets
+   git commit -m "Update profile README"
+   git push origin main
+
+If your repository does not exist locally yet:
+
+   git clone https://github.com/Ayank-ssh/ayank-ssh.git
+   cd ayank-ssh
+   # copy README.md and assets/ from this ZIP into this folder
+   git add README.md assets
+   git commit -m "Update profile README"
+   git push origin main
+
+If your default branch is master instead of main, use:
+
+   git push origin master
+
+If Git asks for identity first:
+
+   git config --global user.name "Ayank"
+   git config --global user.email "YOUR_GITHUB_EMAIL"
+
+IMPORTANT:
+- Keep the assets/ folder in the same repository as README.md.
+- Do not rename the custom emoji files unless you also change the paths in README.md.
+- The profile README repository must be named exactly after your GitHub username: ayank-ssh.
