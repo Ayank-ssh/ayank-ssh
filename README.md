@@ -104,21 +104,14 @@ A security-focused project centered around **automation, protection, moderation,
 ## <img src="assets/Memory.png" width="22"> GitHub Activity
 
 <p align="center">
-  <a href="https://github.com/Ayank-ssh">
-    <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub contribution history">
-  </a>
+  <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub contribution history">
 </p>
 
 <p align="center">
-  <sub>Hover any cell for the date and contribution count. Click the graph to open GitHub's full interactive activity view.</sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Ayank-ssh">
-    <img src="https://img.shields.io/badge/OPEN%20INTERACTIVE%20GITHUB%20ACTIVITY-111318?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=D7263D">
+  <a href="https://github.com/Ayank-ssh?tab=overview">
+    <img src="https://img.shields.io/badge/VIEW_FULL_GITHUB_ACTIVITY-111318?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=D7263D" alt="View full GitHub activity">
   </a>
 </p>
-
 ---
 
 <div align="center">

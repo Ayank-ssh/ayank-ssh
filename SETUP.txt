@@ -1,18 +1,18 @@
-AYANK PROFILE — CONTRIBUTION GRAPH V7
+AYANK PROFILE README — V8
 
-The previous workflow had stale code from an older version of the script.
-V7 replaces the script completely.
-
-It:
-- gets the account creation year
-- queries GitHub one calendar year at a time
-- preserves all available contribution history
-- generates the red/crimson contribution SVG
-- adds hover tooltips for every contribution cell
+Changes:
+- Removed the awkward "Hover any cell..." paragraph.
+- Replaced the ugly image/badge composition with one clean CTA button.
+- Redesigned the contribution graph to be larger and easier to read.
+- One year per row, GitHub-style month + weekday labels.
+- Larger rounded cells and per-year contribution totals.
+- Same black/crimson/red palette.
+- Hover cells for exact date + contribution count.
+- Graph automatically syncs through GitHub Actions.
 
 Push:
   git add .
-  git commit -m "Fix contribution graph sync"
+  git commit -m "Polish contribution graph layout"
   git push
 
 Then:
