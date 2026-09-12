@@ -9,10 +9,17 @@ LOGIN = os.environ.get("GITHUB_USER", "Ayank-ssh")
 TOKEN = os.environ["GITHUB_TOKEN"]
 OUT = Path("assets/contributions.svg")
 
-QUERY = """
-query($login:String!, $from:DateTime!, $to:DateTime!) {
+USER_QUERY = """
+query($login:String!) {
   user(login:$login) {
     createdAt
+  }
+}
+"""
+
+CALENDAR_QUERY = """
+query($login:String!, $from:DateTime!, $to:DateTime!) {
+  user(login:$login) {
     contributionsCollection(from:$from, to:$to) {
       totalContributions
       contributionCalendar {
@@ -25,11 +32,8 @@ query($login:String!, $from:DateTime!, $to:DateTime!) {
 }
 """
 
-def gql(from_dt, to_dt):
-    body = json.dumps({
-        "query": QUERY,
-        "variables": {"login": LOGIN, "from": from_dt, "to": to_dt}
-    }).encode()
+def gql(query, variables):
+    body = json.dumps({"query": query, "variables": variables}).encode()
     req = urllib.request.Request(
         "https://api.github.com/graphql",
         data=body,
@@ -45,6 +49,32 @@ def gql(from_dt, to_dt):
     if data.get("errors"):
         raise RuntimeError(data["errors"])
     return data["data"]["user"]
+
+account = gql(USER_QUERY, {"login": LOGIN})
+created_at = account.get("createdAt", "")
+if not created_at:
+    raise RuntimeError("GitHub did not return the account creation date.")
+
+start_year = datetime.fromisoformat(created_at.replace("Z", "+00:00")).year
+today = date.today()
+all_days = []
+
+for year in range(start_year, today.year + 1):
+    # Each request covers exactly one calendar year, staying within
+    # GitHub's contribution-calendar date-range limit.
+    u = gql(
+        CALENDAR_QUERY,
+        {
+            "login": LOGIN,
+            "from": f"{year}-01-01T00:00:00Z",
+            "to": f"{year + 1}-01-01T00:00:00Z",
+        },
+    )
+    all_days.extend(
+        day
+        for week in u["contributionsCollection"]["contributionCalendar"]["weeks"]
+        for day in week["contributionDays"]
+    )
 
 # GitHub's contribution calendar is naturally a one-year view. Query every
 # calendar year from the account creation year through the current year.

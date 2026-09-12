@@ -110,7 +110,7 @@ A security-focused project centered around **automation, protection, moderation,
 </p>
 
 <p align="center">
-  <sub>Hover contribution cells for the date and count. The graph is synced from GitHub's contribution calendar.</sub>
+  <sub>Hover any cell for the date and contribution count. Click the graph to open GitHub's full interactive activity view.</sub>
 </p>
 
 <p align="center">
