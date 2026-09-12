@@ -1,0 +1,35 @@
+AYANK PROFILE README — CONTRIBUTION HISTORY V4
+
+What this does
+--------------
+- Shows your contribution history from the year your GitHub account was created
+  through the current year, rather than only the last year.
+- Each contribution cell has a hover tooltip with the exact date and count.
+- Uses your red/crimson profile palette.
+- GitHub Actions regenerates the graph daily from GitHub's GraphQL contribution
+  calendar.
+- Clicking the graph opens your GitHub profile, where GitHub's native contribution
+  calendar remains fully interactive (year selector, activity details, etc.).
+
+Important GitHub limitation
+---------------------------
+GitHub sanitizes scripts/iframes in README Markdown, so a truly interactive
+JavaScript contribution calendar cannot live directly inside the README.
+The README graph therefore uses SVG cells with hover tooltips, while the
+"OPEN INTERACTIVE GITHUB ACTIVITY" button links to the native interactive
+GitHub profile graph.
+
+Push
+----
+git add .
+git commit -m "Add full contribution history"
+git push
+
+Then go to:
+https://github.com/Ayank-ssh/ayank-ssh/actions
+
+Run:
+Sync Contribution Graph -> Run workflow
+
+After the workflow succeeds, refresh:
+https://github.com/Ayank-ssh

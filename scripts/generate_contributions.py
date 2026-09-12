@@ -1,7 +1,8 @@
 import json
+import math
 import os
 import urllib.request
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 LOGIN = os.environ.get("GITHUB_USER", "Ayank-ssh")
@@ -9,17 +10,14 @@ TOKEN = os.environ["GITHUB_TOKEN"]
 OUT = Path("assets/contributions.svg")
 
 QUERY = """
-query($login:String!) {
+query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
-    contributionsCollection {
+    createdAt
+    contributionsCollection(from:$from, to:$to) {
+      totalContributions
       contributionCalendar {
-        totalContributions
-        colors
         weeks {
-          contributionDays {
-            contributionCount
-            date
-          }
+          contributionDays { contributionCount date }
         }
       }
     }
@@ -27,112 +25,149 @@ query($login:String!) {
 }
 """
 
-payload = json.dumps({"query": QUERY, "variables": {"login": LOGIN}}).encode()
-req = urllib.request.Request(
-    "https://api.github.com/graphql",
-    data=payload,
-    headers={
-        "Authorization": f"bearer {TOKEN}",
-        "Content-Type": "application/json",
-        "User-Agent": "ayank-profile-contributions",
-        "Accept": "application/vnd.github+json",
-    },
-)
-with urllib.request.urlopen(req, timeout=30) as response:
-    data = json.load(response)
-
-if data.get("errors"):
-    raise RuntimeError(data["errors"])
-
-calendar = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
-weeks = calendar["weeks"]
-total = calendar["totalContributions"]
-
-# Palette matched to the README: near-black -> deep crimson -> bright red.
-levels = ["#16181d", "#3b1017", "#65121d", "#a61b2b", "#ff3b30"]
-
-counts = [
-    d["contributionCount"]
-    for w in weeks
-    for d in w["contributionDays"]
-]
-positive = sorted(c for c in counts if c > 0)
-
-def level(count: int) -> str:
-    if count <= 0:
-        return levels[0]
-    if not positive:
-        return levels[1]
-    # Four intensity bands based on the user's own contribution distribution.
-    import math
-    q = [positive[max(0, math.ceil(len(positive)*p)-1)] for p in (0.25, 0.50, 0.75)]
-    if count <= q[0]:
-        return levels[1]
-    if count <= q[1]:
-        return levels[2]
-    if count <= q[2]:
-        return levels[3]
-    return levels[4]
-
-cell = 13
-gap = 4
-left = 44
-top = 34
-week_step = cell + gap
-height = top + 7 * week_step + 26
-width = left + len(weeks) * week_step + 8
-
-def esc(s: str) -> str:
-    return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
-
-parts = [
-    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-    '<title id="title">GitHub contribution activity</title>',
-    f'<desc id="desc">{esc(LOGIN)} made {total} contributions in the last year.</desc>',
-    '<rect width="100%" height="100%" rx="12" fill="#0b0d10"/>',
-    '<style>.label{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#9aa4ad}.day{font:10px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#707a84}</style>',
-    f'<text x="{left}" y="18" class="day">{total} contributions in the last year</text>',
-]
-
-# Month labels.
-last_month = None
-for wi, w in enumerate(weeks):
-    first = w["contributionDays"][0]["date"]
-    d = datetime.strptime(first, "%Y-%m-%d").date()
-    month = d.strftime("%b")
-    if month != last_month and wi > 0:
-        parts.append(
-            f'<text x="{left + wi * week_step}" y="31" class="day">{month}</text>'
-        )
-        last_month = month
-
-# Weekday labels.
-for label, row in [("Mon", 1), ("Wed", 3), ("Fri", 5)]:
-    y = top + row * week_step + 9
-    parts.append(f'<text x="0" y="{y}" class="day">{label}</text>')
-
-for wi, w in enumerate(weeks):
-    for day in w["contributionDays"]:
-        d = datetime.strptime(day["date"], "%Y-%m-%d").date()
-        x = left + wi * week_step
-        y = top + d.weekday() * week_step
-        c = level(day["contributionCount"])
-        parts.append(
-            f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" fill="{c}">'
-            f'<title>{day["date"]}: {day["contributionCount"]} contributions</title></rect>'
-        )
-
-parts += [
-    f'<text x="{left}" y="{height - 8}" class="day">Less</text>',
-]
-for i, c in enumerate(levels):
-    parts.append(
-        f'<rect x="{left + 34 + i*18}" y="{height - 18}" width="13" height="13" rx="3" fill="{c}"/>'
+def gql(from_dt, to_dt):
+    body = json.dumps({
+        "query": QUERY,
+        "variables": {"login": LOGIN, "from": from_dt, "to": to_dt}
+    }).encode()
+    req = urllib.request.Request(
+        "https://api.github.com/graphql",
+        data=body,
+        headers={
+            "Authorization": f"bearer {TOKEN}",
+            "Content-Type": "application/json",
+            "User-Agent": "ayank-profile-contribution-sync",
+            "Accept": "application/vnd.github+json",
+        },
     )
-parts += [
-    f'<text x="{left + 34 + 5*18 + 4}" y="{height - 8}" class="day">More</text>',
-    "</svg>",
+    with urllib.request.urlopen(req, timeout=30) as response:
+        data = json.load(response)
+    if data.get("errors"):
+        raise RuntimeError(data["errors"])
+    return data["data"]["user"]
+
+# GitHub's contribution calendar is naturally a one-year view. Query every
+# calendar year from the account creation year through the current year.
+today = date.today()
+start_year = today.year
+created = None
+all_days = []
+
+# First request: account creation + current year.
+first = gql(
+    f"{today.year-1}-01-01T00:00:00Z",
+    f"{today.year+1}-01-01T00:00:00Z",
+)
+created = first.get("createdAt", "")
+if created:
+    start_year = datetime.fromisoformat(created.replace("Z", "+00:00")).year
+
+for year in range(start_year, today.year + 1):
+    u = gql(
+        f"{year}-01-01T00:00:00Z",
+        f"{year+1}-01-01T00:00:00Z",
+    )
+    days = [
+        day
+        for week in u["contributionsCollection"]["contributionCalendar"]["weeks"]
+        for day in week["contributionDays"]
+    ]
+    all_days.extend(days)
+
+# Deduplicate and limit to dates through today.
+by_date = {
+    d["date"]: int(d["contributionCount"])
+    for d in all_days
+    if d["date"] <= today.isoformat()
+}
+if not by_date:
+    raise RuntimeError("No contribution data returned from GitHub.")
+
+positive = sorted(v for v in by_date.values() if v > 0)
+
+def quartiles(values):
+    if not values:
+        return [0, 0, 0]
+    return [
+        values[max(0, math.ceil(len(values) * p) - 1)]
+        for p in (0.25, 0.50, 0.75)
+    ]
+
+q1, q2, q3 = quartiles(positive)
+palette = ["#16181d", "#3b1017", "#65121d", "#a61b2b", "#ff3b30"]
+
+def color(n):
+    if n <= 0:
+        return palette[0]
+    if n <= q1:
+        return palette[1]
+    if n <= q2:
+        return palette[2]
+    if n <= q3:
+        return palette[3]
+    return palette[4]
+
+cell, gap = 11, 3
+year_gap = 34
+left = 42
+top = 34
+panel_w = 53 * (cell + gap)
+panel_h = 7 * (cell + gap) + 28
+years = list(range(start_year, today.year + 1))
+cols = 2
+rows = math.ceil(len(years) / cols)
+width = left + cols * panel_w + 16
+height = 18 + rows * (panel_h + year_gap)
+
+total = sum(by_date.values())
+parts = [
+    f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img">',
+    f'<title>{LOGIN} — contribution history</title>',
+    f'<desc>{total} contributions across {years[0]}–{years[-1]}.</desc>',
+    '<rect width="100%" height="100%" rx="14" fill="#0b0d10"/>',
 ]
+
+weekday_labels = {1: "M", 3: "W", 5: "F"}
+
+for idx, year in enumerate(years):
+    col = idx % cols
+    row = idx // cols
+    x0 = 18 + col * panel_w
+    y0 = 12 + row * (panel_h + year_gap)
+
+    parts.append(f'<text x="{x0}" y="{y0+13}" fill="#f2f4f7" font-size="12" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-weight="600">{year}</text>')
+
+    # Find the first Sunday of the calendar area that contains Jan 1.
+    jan1 = date(year, 1, 1)
+    start = jan1 - timedelta(days=(jan1.weekday() + 1) % 7)
+
+    # 53 columns is enough for the year plus alignment.
+    for week in range(53):
+        for rowday in range(7):
+            d = start + timedelta(days=week*7 + rowday)
+            if d.year != year or d > today:
+                continue
+            x = x0 + 19 + week * (cell + gap)
+            y = y0 + 22 + rowday * (cell + gap)
+            n = by_date.get(d.isoformat(), 0)
+            c = color(n)
+            parts.append(
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.5" fill="{c}">'
+                f'<title>{d.isoformat()}: {n} contribution{"s" if n != 1 else ""}</title></rect>'
+            )
+
+    for r, lab in weekday_labels.items():
+        y = y0 + 22 + r * (cell + gap) + 9
+        parts.append(
+            f'<text x="{x0}" y="{y}" fill="#707a84" font-size="9" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">{lab}</text>'
+        )
+
+parts.append(f'<text x="{left}" y="{height-10}" fill="#9aa4ad" font-size="10" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">{total} total contributions</text>')
+for i, c in enumerate(palette):
+    parts.append(f'<rect x="{width-135+i*17}" y="{height-18}" width="11" height="11" rx="2" fill="{c}"/>')
+parts.append(f'<text x="{width-151}" y="{height-9}" fill="#707a84" font-size="9" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">Less</text>')
+parts.append(f'<text x="{width-40}" y="{height-9}" fill="#707a84" font-size="9" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif">More</text>')
+parts.append("</svg>")
 
 OUT.write_text("\n".join(parts), encoding="utf-8")
-print(f"Wrote {OUT}")
+print(f"Wrote {OUT} with {len(by_date)} days and {total} contributions.")

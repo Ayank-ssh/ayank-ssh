@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate graph
+      - name: Generate full contribution history
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: Ayank-ssh
@@ -26,5 +26,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/contributions.svg
-          git diff --cached --quiet || git commit -m "chore: sync contribution graph"
+          git diff --cached --quiet || git commit -m "chore: sync full contribution history"
           git push
