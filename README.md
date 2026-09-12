@@ -108,14 +108,15 @@ A security-focused project centered around **automation, protection, moderation,
 ## <img src="assets/Memory.png" width="22"> Recent GitHub Activity
 
 <p align="center">
-  <img src="assets/contributions.svg" width="100%" alt="Ayank's recent GitHub contribution activity">
+  <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub activity over the last 30 days">
 </p>
 
 <p align="center">
   <a href="https://github.com/Ayank-ssh?tab=overview">
-    <img src="https://img.shields.io/badge/VIEW_FULL_GITHUB_ACTIVITY-111318?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=D7263D" alt="View full GitHub activity">
+    <img src="https://img.shields.io/badge/VIEW_FULL_ACTIVITY-111318?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=D7263D" alt="View full GitHub activity">
   </a>
 </p>
+
 ---
 
 <div align="center">

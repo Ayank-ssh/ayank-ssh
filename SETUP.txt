@@ -1,24 +1,21 @@
-AYANK PROFILE — FINAL
+AYANK PROFILE — V10
 
-Includes:
-- Dark cinematic red/crimson profile palette
-- Custom banner
-- Custom emoji section icons
-- Clean badges
-- Supernova Security correctly presented as a private project
-- 30-day contribution graph with hoverable contribution counts
-- Automatic contribution graph refresh on every push to main
-- Daily contribution graph fallback sync
-- No contribution snake workflow required
+The contribution section is now a proper compact GitHub-style calendar:
+- 7 weekday rows
+- 5–6 week columns depending on the month boundary
+- larger square cells with rounded corners
+- month labels
+- contribution intensity from dark -> crimson -> red
+- hover tooltips for exact date + count
+- compact header and legend
+- no giant title or stretched 6x5 card
+
+It automatically refreshes through the existing Sync Contribution Graph workflow.
 
 Install:
-1. Replace the contents of your Ayank-ssh/ayank-ssh repository with this package.
-2. Run:
+  git add .
+  git commit -m "Redesign contribution graph"
+  git push
 
-   git add .
-   git commit -m "Finalize profile README"
-   git push
-
-3. GitHub Actions will automatically update the contribution graph after pushes.
-4. Manual refresh:
-   Actions -> Sync Contribution Graph -> Run workflow
+Then run the workflow once from:
+  Actions -> Sync Contribution Graph -> Run workflow
