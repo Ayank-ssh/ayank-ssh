@@ -1,4 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" role="img" aria-label="Contribution graph pending first sync">
-<rect width="900" height="150" rx="12" fill="#0b0d10"/>
-<text x="40" y="82" fill="#9aa4ad" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="18">Contribution graph will sync automatically after the first workflow run.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 245" role="img">
+<title>Ayank-ssh — recent GitHub activity</title>
+<desc>65 contributions in the last 30 days, from 2026-08-14 to 2026-09-12.</desc>
+<style>.title{font:700 17px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#F2F4F7}.sub{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#9AA4AD}.day{font:10px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#707A84}</style>
+<rect width="100%" height="100%" rx="14" fill="#0B0D10"/>
+<text x="98" y="23" class="title">Last 30 days</text>
+<text x="98" y="40" class="sub">Aug 14, 2026 — Sep 12, 2026  •  65 contributions</text>
+<rect x="98" y="54" width="24" height="24" rx="6" fill="#3B1017"><title>Friday, August 14, 2026: 1 contribution</title></rect>
+<text x="110.0" y="92" text-anchor="middle" class="day">14</text>
+<rect x="129" y="54" width="24" height="24" rx="6" fill="#65121D"><title>Saturday, August 15, 2026: 2 contributions</title></rect>
+<text x="141.0" y="92" text-anchor="middle" class="day">15</text>
+<rect x="160" y="54" width="24" height="24" rx="6" fill="#3B1017"><title>Sunday, August 16, 2026: 1 contribution</title></rect>
+<text x="172.0" y="92" text-anchor="middle" class="day">16</text>
+<rect x="191" y="54" width="24" height="24" rx="6" fill="#16181D"><title>Monday, August 17, 2026: 0 contributions</title></rect>
+<text x="203.0" y="92" text-anchor="middle" class="day">17</text>
+<rect x="222" y="54" width="24" height="24" rx="6" fill="#16181D"><title>Tuesday, August 18, 2026: 0 contributions</title></rect>
+<text x="234.0" y="92" text-anchor="middle" class="day">18</text>
+<rect x="253" y="54" width="24" height="24" rx="6" fill="#16181D"><title>Wednesday, August 19, 2026: 0 contributions</title></rect>
+<text x="265.0" y="92" text-anchor="middle" class="day">19</text>
+<rect x="98" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Thursday, August 20, 2026: 0 contributions</title></rect>
+<text x="110.0" y="123" text-anchor="middle" class="day">20</text>
+<rect x="129" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Friday, August 21, 2026: 0 contributions</title></rect>
+<text x="141.0" y="123" text-anchor="middle" class="day">21</text>
+<rect x="160" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Saturday, August 22, 2026: 0 contributions</title></rect>
+<text x="172.0" y="123" text-anchor="middle" class="day">22</text>
+<rect x="191" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Sunday, August 23, 2026: 0 contributions</title></rect>
+<text x="203.0" y="123" text-anchor="middle" class="day">23</text>
+<rect x="222" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Monday, August 24, 2026: 0 contributions</title></rect>
+<text x="234.0" y="123" text-anchor="middle" class="day">24</text>
+<rect x="253" y="85" width="24" height="24" rx="6" fill="#16181D"><title>Tuesday, August 25, 2026: 0 contributions</title></rect>
+<text x="265.0" y="123" text-anchor="middle" class="day">25</text>
+<rect x="98" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Wednesday, August 26, 2026: 0 contributions</title></rect>
+<text x="110.0" y="154" text-anchor="middle" class="day">26</text>
+<rect x="129" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Thursday, August 27, 2026: 0 contributions</title></rect>
+<text x="141.0" y="154" text-anchor="middle" class="day">27</text>
+<rect x="160" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Friday, August 28, 2026: 0 contributions</title></rect>
+<text x="172.0" y="154" text-anchor="middle" class="day">28</text>
+<rect x="191" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Saturday, August 29, 2026: 0 contributions</title></rect>
+<text x="203.0" y="154" text-anchor="middle" class="day">29</text>
+<rect x="222" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Sunday, August 30, 2026: 0 contributions</title></rect>
+<text x="234.0" y="154" text-anchor="middle" class="day">30</text>
+<rect x="253" y="116" width="24" height="24" rx="6" fill="#16181D"><title>Monday, August 31, 2026: 0 contributions</title></rect>
+<text x="265.0" y="154" text-anchor="middle" class="day">31</text>
+<rect x="98" y="147" width="24" height="24" rx="6" fill="#16181D"><title>Tuesday, September 01, 2026: 0 contributions</title></rect>
+<text x="110.0" y="185" text-anchor="middle" class="day">1</text>
+<rect x="129" y="147" width="24" height="24" rx="6" fill="#16181D"><title>Wednesday, September 02, 2026: 0 contributions</title></rect>
+<text x="141.0" y="185" text-anchor="middle" class="day">2</text>
+<rect x="160" y="147" width="24" height="24" rx="6" fill="#16181D"><title>Thursday, September 03, 2026: 0 contributions</title></rect>
+<text x="172.0" y="185" text-anchor="middle" class="day">3</text>
+<rect x="191" y="147" width="24" height="24" rx="6" fill="#16181D"><title>Friday, September 04, 2026: 0 contributions</title></rect>
+<text x="203.0" y="185" text-anchor="middle" class="day">4</text>
+<rect x="222" y="147" width="24" height="24" rx="6" fill="#3B1017"><title>Saturday, September 05, 2026: 1 contribution</title></rect>
+<text x="234.0" y="185" text-anchor="middle" class="day">5</text>
+<rect x="253" y="147" width="24" height="24" rx="6" fill="#FF3B30"><title>Sunday, September 06, 2026: 19 contributions</title></rect>
+<text x="265.0" y="185" text-anchor="middle" class="day">6</text>
+<rect x="98" y="178" width="24" height="24" rx="6" fill="#A61B2B"><title>Monday, September 07, 2026: 9 contributions</title></rect>
+<text x="110.0" y="216" text-anchor="middle" class="day">7</text>
+<rect x="129" y="178" width="24" height="24" rx="6" fill="#FF3B30"><title>Tuesday, September 08, 2026: 14 contributions</title></rect>
+<text x="141.0" y="216" text-anchor="middle" class="day">8</text>
+<rect x="160" y="178" width="24" height="24" rx="6" fill="#65121D"><title>Wednesday, September 09, 2026: 2 contributions</title></rect>
+<text x="172.0" y="216" text-anchor="middle" class="day">9</text>
+<rect x="191" y="178" width="24" height="24" rx="6" fill="#A61B2B"><title>Thursday, September 10, 2026: 3 contributions</title></rect>
+<text x="203.0" y="216" text-anchor="middle" class="day">10</text>
+<rect x="222" y="178" width="24" height="24" rx="6" fill="#16181D"><title>Friday, September 11, 2026: 0 contributions</title></rect>
+<text x="234.0" y="216" text-anchor="middle" class="day">11</text>
+<rect x="253" y="178" width="24" height="24" rx="6" fill="#A61B2B"><title>Saturday, September 12, 2026: 13 contributions</title></rect>
+<text x="265.0" y="216" text-anchor="middle" class="day">12</text>
+<text x="98" y="227" class="day">Less</text>
+<rect x="129" y="216" width="13" height="13" rx="4" fill="#16181D"/>
+<rect x="150" y="216" width="13" height="13" rx="4" fill="#3B1017"/>
+<rect x="171" y="216" width="13" height="13" rx="4" fill="#65121D"/>
+<rect x="192" y="216" width="13" height="13" rx="4" fill="#A61B2B"/>
+<rect x="213" y="216" width="13" height="13" rx="4" fill="#FF3B30"/>
+<text x="238" y="227" class="day">More</text>
 </svg>
