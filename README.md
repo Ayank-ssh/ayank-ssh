@@ -49,7 +49,7 @@ A security-focused project centered around **automation, protection, moderation,
   <img src="https://img.shields.io/badge/SECURITY-B51F33?style=flat-square&labelColor=111318">
   <img src="https://img.shields.io/badge/AUTOMATION-D7263D?style=flat-square&labelColor=111318">
   <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/OPEN%20SOURCE-9AA4AD?style=flat-square&labelColor=111318">
+
 </p>
 
 ---
@@ -105,10 +105,10 @@ A security-focused project centered around **automation, protection, moderation,
 
 ---
 
-## <img src="assets/Memory.png" width="22"> Recent GitHub Activity
+## <img src="assets/Memory.png" width="22"> GitHub Activity
 
 <p align="center">
-  <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub activity over the last 30 days">
+  <img src="https://raw.githubusercontent.com/Ayank-ssh/ayank-ssh/gh-pages/contributions.svg" width="100%" alt="Ayank's GitHub activity over the last 12 weeks">
 </p>
 
 <p align="center">

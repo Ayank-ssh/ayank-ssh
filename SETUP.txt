@@ -1,21 +1,35 @@
-AYANK PROFILE — V10
+AYANK PROFILE — CLEAN FINAL PACKAGE
 
-The contribution section is now a proper compact GitHub-style calendar:
-- 7 weekday rows
-- 5–6 week columns depending on the month boundary
-- larger square cells with rounded corners
-- month labels
-- contribution intensity from dark -> crimson -> red
-- hover tooltips for exact date + count
-- compact header and legend
-- no giant title or stretched 6x5 card
-
-It automatically refreshes through the existing Sync Contribution Graph workflow.
+What is fixed:
+- Removed the old GitHub contribution snake workflow.
+- Removed the incorrect Supernova Security "Open Source" badge.
+- Contribution graph is a clean GitHub-style last-12-weeks calendar.
+- Graph uses the red/crimson profile palette.
+- Graph updates automatically on every push to main.
+- IMPORTANT: the generated graph is published to the separate gh-pages branch,
+  so GitHub Actions never commits to main.
+- This eliminates the repeated "fetch first" / rebase conflicts.
+- The README loads the graph from gh-pages.
 
 Install:
-  git add .
-  git commit -m "Redesign contribution graph"
-  git push
+1. Extract this package over your existing ayank-github-readme folder.
+   Do NOT delete the folder's existing .git directory.
+2. Then run:
 
-Then run the workflow once from:
-  Actions -> Sync Contribution Graph -> Run workflow
+   git status
+   git add .
+   git commit -m "Clean up profile README and contribution sync"
+   git push
+
+3. GitHub Actions will automatically publish/update:
+   gh-pages/contributions.svg
+
+4. After the first workflow succeeds, refresh:
+   https://github.com/Ayank-ssh
+
+Normal future workflow:
+   git add .
+   git commit -m "your change"
+   git push
+
+No rebase is needed just because the contribution graph updated.
