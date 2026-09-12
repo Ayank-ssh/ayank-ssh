@@ -1,21 +1,15 @@
-AYANK PROFILE README — CONTRIBUTION HISTORY V5
+AYANK PROFILE README — CONTRIBUTION HISTORY V6
 
-This fixes the previous workflow failure by querying GitHub one calendar year
-at a time. GitHub limits contribution-calendar date ranges, so the old script's
-multi-year bootstrap request could fail immediately.
+Fixed:
+- GitHub GraphQL schema error: totalContributions belongs to contributionCalendar.
+- Queries one calendar year at a time.
+- Generates the full available history from account creation through the current year.
+- Keeps the red/crimson palette and hoverable contribution cells.
 
-Push
-----
+Push:
 git add .
-git commit -m "Fix full contribution history sync"
+git commit -m "Fix contribution history GraphQL query"
 git push
 
 Then:
-Actions -> Sync Contribution Graph -> Run workflow -> main
-
-The graph:
-- includes all available contribution history from account creation through now
-- uses the red/crimson palette
-- has hover tooltips in the SVG
-- links to your native GitHub profile for the fully interactive view
-- updates automatically every day
+GitHub -> Actions -> Sync Contribution Graph -> Run workflow -> main

@@ -21,8 +21,8 @@ CALENDAR_QUERY = """
 query($login:String!, $from:DateTime!, $to:DateTime!) {
   user(login:$login) {
     contributionsCollection(from:$from, to:$to) {
-      totalContributions
       contributionCalendar {
+        totalContributions
         weeks {
           contributionDays { contributionCount date }
         }
@@ -70,9 +70,10 @@ for year in range(start_year, today.year + 1):
             "to": f"{year + 1}-01-01T00:00:00Z",
         },
     )
+    calendar = u["contributionsCollection"]["contributionCalendar"]
     all_days.extend(
         day
-        for week in u["contributionsCollection"]["contributionCalendar"]["weeks"]
+        for week in calendar["weeks"]
         for day in week["contributionDays"]
     )
 
