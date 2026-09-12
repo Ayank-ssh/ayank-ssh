@@ -18,6 +18,8 @@
 
 </div>
 
+---
+
 ## <img src="assets/Icons_link.png" width="22"> About Me
 
 I'm **Ayank**, a student and developer who likes turning ideas into working software.
@@ -40,10 +42,9 @@ I spend most of my time around **backend development, automation, Discord bots, 
 A security-focused project centered around **automation, protection, moderation, and reliability**.
 
 <p>
-  <img src="https://img.shields.io/badge/SECURITY-B51F33?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/AUTOMATION-D7263D?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318">
-
+  <img src="https://img.shields.io/badge/SECURITY-B51F33?style=flat-square&labelColor=111318" alt="Security">
+  <img src="https://img.shields.io/badge/AUTOMATION-D7263D?style=flat-square&labelColor=111318" alt="Automation">
+  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318" alt="Discord">
 </p>
 
 ---
@@ -52,20 +53,20 @@ A security-focused project centered around **automation, protection, moderation,
 
 <table>
 <tr>
-<td width="150"><b>Languages</b></td>
-<td><img src="https://skillicons.dev/icons?i=python,js,ts" height="38"></td>
+<td width="150"><strong>Languages</strong></td>
+<td><img src="https://skillicons.dev/icons?i=python,js,ts" height="38" alt="Python JavaScript TypeScript"></td>
 </tr>
 <tr>
-<td><b>Frontend</b></td>
-<td><img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="38"></td>
+<td><strong>Frontend</strong></td>
+<td><img src="https://skillicons.dev/icons?i=html,css,react,tailwind" height="38" alt="HTML CSS React Tailwind"></td>
 </tr>
 <tr>
-<td><b>Backend</b></td>
-<td><img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="38"></td>
+<td><strong>Backend</strong></td>
+<td><img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,mysql,postgres,redis" height="38" alt="Node.js Express MongoDB MySQL PostgreSQL Redis"></td>
 </tr>
 <tr>
-<td><b>Tools & Infra</b></td>
-<td><img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="38"></td>
+<td><strong>Tools & Infra</strong></td>
+<td><img src="https://skillicons.dev/icons?i=linux,docker,nginx,git,github" height="38" alt="Linux Docker Nginx Git GitHub"></td>
 </tr>
 </table>
 
@@ -75,12 +76,32 @@ A security-focused project centered around **automation, protection, moderation,
 
 <table>
 <tr>
-<td width="50%"><img src="assets/shield.png" width="20"> **Security systems**<br>Protection, moderation, anti-abuse and automation.</td>
-<td width="50%"><img src="assets/Lighting.png" width="20"> **Discord bots**<br>Bots, utilities, automations and server tooling.</td>
+<td width="50%">
+
+<img src="assets/shield.png" width="20"> <strong>Security systems</strong><br>
+Protection, moderation, anti-abuse and automation.
+
+</td>
+<td width="50%">
+
+<img src="assets/Lighting.png" width="20"> <strong>Discord bots</strong><br>
+Bots, utilities, automations and server tooling.
+
+</td>
 </tr>
 <tr>
-<td><img src="assets/icon_write.png" width="20"> **Web apps**<br>Dashboards, APIs and useful interfaces.</td>
-<td><img src="assets/icons_wrench.png" width="20"> **Infrastructure**<br>Linux, Docker, VPS, reverse proxies and self-hosting.</td>
+<td>
+
+<img src="assets/icon_write.png" width="20"> <strong>Web apps</strong><br>
+Dashboards, APIs and useful interfaces.
+
+</td>
+<td>
+
+<img src="assets/icons_wrench.png" width="20"> <strong>Infrastructure</strong><br>
+Linux, Docker, VPS, reverse proxies and self-hosting.
+
+</td>
 </tr>
 </table>
 
@@ -90,10 +111,10 @@ A security-focused project centered around **automation, protection, moderation,
 
 <p>
   <a href="https://instagram.com/kyros.ssh">
-    <img src="https://img.shields.io/badge/INSTAGRAM-kyros.ssh-FF3B30?style=for-the-badge&logo=instagram&logoColor=FFFFFF&labelColor=111318">
+    <img src="https://img.shields.io/badge/INSTAGRAM-kyros.ssh-FF3B30?style=for-the-badge&logo=instagram&logoColor=FFFFFF&labelColor=111318" alt="Instagram">
   </a>
   <a href="https://discord.gg/hff6f4fVPE">
-    <img src="https://img.shields.io/badge/DISCORD-JOIN%20SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF&labelColor=111318">
+    <img src="https://img.shields.io/badge/DISCORD-JOIN%20SERVER-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF&labelColor=111318" alt="Discord">
   </a>
 </p>
 
@@ -102,7 +123,7 @@ A security-focused project centered around **automation, protection, moderation,
 ## <img src="assets/Memory.png" width="22"> GitHub Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Ayank-ssh/ayank-ssh/gh-pages/contributions.svg" width="100%" alt="Ayank's GitHub activity over the last 12 weeks">
+  <img src="https://raw.githubusercontent.com/Ayank-ssh/ayank-ssh/gh-pages/contributions.svg" width="100%" alt="Ayank's GitHub contributions over the last year">
 </p>
 
 <p align="center">
@@ -115,6 +136,6 @@ A security-focused project centered around **automation, protection, moderation,
 
 <div align="center">
 
-<img src="assets/sparkle.png" width="18"> <b>Stay curious.</b> &nbsp; <code>&lt;/&gt;</code> &nbsp; <b>Keep building.</b> <img src="assets/sparkle.png" width="18">
+<img src="assets/sparkle.png" width="18"> <strong>Stay curious.</strong> &nbsp; <code>&lt;/&gt;</code> &nbsp; <strong>Keep building.</strong> <img src="assets/sparkle.png" width="18">
 
 </div>

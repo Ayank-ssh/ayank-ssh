@@ -1,6 +1,9 @@
 name: Sync Contribution Graph
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "17 0 * * *"
@@ -23,23 +26,26 @@ jobs:
         run: python scripts/generate_contributions.py
 
       - name: Publish graph to gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git fetch origin gh-pages || true
 
           if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
             git worktree add --detach /tmp/gh-pages origin/gh-pages
           else
-            git worktree add --detach /tmp/gh-pages
+            mkdir -p /tmp/gh-pages
+            git -C /tmp/gh-pages init
             git -C /tmp/gh-pages checkout --orphan gh-pages
+            git -C /tmp/gh-pages remote add origin "${{ github.server_url }}/${{ github.repository }}.git"
           fi
 
           cp dist/contributions.svg /tmp/gh-pages/contributions.svg
+
           cd /tmp/gh-pages
           git add contributions.svg
+
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync contribution graph"
             git push origin HEAD:gh-pages
