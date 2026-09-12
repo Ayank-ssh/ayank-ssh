@@ -120,8 +120,9 @@ for wi, week in enumerate(weeks):
             continue
         month_key = day["date"][:7]
         # Don't show a label too far into a week; first appearance is enough.
+        month_names = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
         parts.append(
-            f'<text x="{left + wi * step}" y="27" class="label">{day["date"][5:7]}</text>'
+            f'<text x="{left + wi * step}" y="27" class="label">{month_names[int(day["date"][5:7]) - 1]}</text>'
         )
         seen_months.add(month_key)
         break
