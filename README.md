@@ -6,22 +6,17 @@
 
 <p>
   <a href="https://github.com/Ayank-ssh">
-    <p>
-  <img src="https://img.shields.io/badge/SECURITY-B51F33?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/AUTOMATION-D7263D?style=flat-square&labelColor=111318">
-  <img src="https://img.shields.io/badge/DISCORD-5865F2?style=flat-square&labelColor=111318">
-</p>
+    <img src="https://img.shields.io/badge/GITHUB-AYANK--SSH-0B0D10?style=for-the-badge&logo=github&logoColor=F2F4F7&labelColor=111318" alt="GitHub">
   </a>
   <a href="https://github.com/Ayank-ssh?tab=followers">
-    <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&label=FOLLOWERS&color=D7263D&labelColor=111318">
+    <img src="https://img.shields.io/github/followers/Ayank-ssh?style=for-the-badge&label=FOLLOWERS&color=D7263D&labelColor=111318" alt="Followers">
   </a>
   <a href="https://github.com/Ayank-ssh">
-    <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?style=for-the-badge&label=UPDATED&color=FF3B30&labelColor=111318">
+    <img src="https://img.shields.io/github/last-commit/Ayank-ssh/ayank-ssh?style=for-the-badge&label=UPDATED&color=FF3B30&labelColor=111318" alt="Last update">
   </a>
 </p>
 
 </div>
-
 ---
 
 ## <img src="assets/Icons_link.png" width="22"> About Me
