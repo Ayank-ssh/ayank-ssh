@@ -101,10 +101,10 @@ A security-focused project centered around **automation, protection, moderation,
 
 ---
 
-## <img src="assets/Memory.png" width="22"> GitHub Activity
+## <img src="assets/Memory.png" width="22"> Recent GitHub Activity
 
 <p align="center">
-  <img src="assets/contributions.svg" width="100%" alt="Ayank's GitHub contribution history">
+  <img src="assets/contributions.svg" width="100%" alt="Ayank's recent GitHub contribution activity">
 </p>
 
 <p align="center">

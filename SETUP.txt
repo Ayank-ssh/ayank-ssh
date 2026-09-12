@@ -1,19 +1,24 @@
-AYANK PROFILE README — V8
+AYANK PROFILE — FINAL
 
-Changes:
-- Removed the awkward "Hover any cell..." paragraph.
-- Replaced the ugly image/badge composition with one clean CTA button.
-- Redesigned the contribution graph to be larger and easier to read.
-- One year per row, GitHub-style month + weekday labels.
-- Larger rounded cells and per-year contribution totals.
-- Same black/crimson/red palette.
-- Hover cells for exact date + contribution count.
-- Graph automatically syncs through GitHub Actions.
+Includes:
+- Dark cinematic red/crimson profile palette
+- Custom banner
+- Custom emoji section icons
+- Clean badges
+- Supernova Security correctly presented as a private project
+- 30-day contribution graph with hoverable contribution counts
+- Automatic contribution graph refresh on every push to main
+- Daily contribution graph fallback sync
+- No contribution snake workflow required
 
-Push:
-  git add .
-  git commit -m "Polish contribution graph layout"
-  git push
+Install:
+1. Replace the contents of your Ayank-ssh/ayank-ssh repository with this package.
+2. Run:
 
-Then:
-  Actions -> Sync Contribution Graph -> Run workflow -> main
+   git add .
+   git commit -m "Finalize profile README"
+   git push
+
+3. GitHub Actions will automatically update the contribution graph after pushes.
+4. Manual refresh:
+   Actions -> Sync Contribution Graph -> Run workflow
