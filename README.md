@@ -1,18 +1,27 @@
 <div align="center">
 
-# Ayank
+# <img src="./assets/Lighting.png" width="28" alt=""> Ayank
 
 ### Student • Developer • Builder
 
-**Building things, breaking things, and learning how to build them better.**
+<p>
+  I build things, break things, and figure out how to make them better.
+</p>
 
 <p>
   <a href="https://github.com/Ayank-ssh">
-    <img src="https://komarev.com/ghpvc/?username=ayank-ssh&label=Profile%20Views&color=6f42c1&style=flat-square" alt="Profile views">
+    <img src="https://img.shields.io/badge/GitHub-Ayank--ssh-8B5CF6?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
-  <a href="https://github.com/Ayank-ssh?tab=followers">
-    <img src="https://img.shields.io/github/followers/Ayank-ssh?style=flat-square&label=Followers" alt="GitHub followers">
+  <a href="https://instagram.com/kyros.ssh">
+    <img src="https://img.shields.io/badge/Instagram-kyros.ssh-F472B6?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
   </a>
+  <a href="https://discord.gg/hff6f4fVPE">
+    <img src="https://img.shields.io/badge/Discord-Join%20Me-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  </a>
+</p>
+
+<p>
+  <img src="https://komarev.com/ghpvc/?username=ayank-ssh&label=PROFILE%20VIEWS&color=8B5CF6&style=flat-square" alt="Profile views">
 </p>
 
 </div>
@@ -27,13 +36,42 @@ A security-focused project built around automation, protection, and reliability.
 
 ---
 
-### <img src="./assets/Purple_Tools.png" width="22" alt=""> What I Do
+### <img src="./assets/Purple_Tools.png" width="22" alt=""> What I Build
 
-- Build **Discord bots, dashboards, web apps and automation tools**
-- Develop **backend systems, APIs and database-driven applications**
-- Work with **Linux, Docker, VPS infrastructure and self-hosting**
-- Explore **DevOps, cloud infrastructure and cybersecurity**
-- Turn ideas into **real, usable projects**
+<table>
+<tr>
+<td width="50%">
+
+**Backend & Automation**
+
+APIs • Discord bots • automation • databases
+
+</td>
+<td width="50%">
+
+**Infrastructure**
+
+Linux • Docker • VPS • Nginx • self-hosting
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**Web & Dashboards**
+
+Web apps • dashboards • developer tools
+
+</td>
+<td width="50%">
+
+**Exploration**
+
+DevOps • cloud • cybersecurity • open source
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -49,16 +87,12 @@ A security-focused project built around automation, protection, and reliability.
 
 ---
 
-### <img src="./assets/Icons_link.png" width="22" alt=""> Connect
+### <img src="./assets/Icons_link.png" width="22" alt=""> Find Me
 
 <p>
-  <a href="https://instagram.com/kyros.ssh">
-    <img src="https://skillicons.dev/icons?i=instagram" width="40" alt="Instagram">
-  </a>
-  &nbsp;
-  <a href="https://discord.gg/hff6f4fVPE">
-    <img src="https://skillicons.dev/icons?i=discord" width="40" alt="Discord">
-  </a>
+  <a href="https://github.com/Ayank-ssh">GitHub</a> •
+  <a href="https://instagram.com/kyros.ssh">Instagram</a> •
+  <a href="https://discord.gg/hff6f4fVPE">Discord</a>
 </p>
 
 ---
@@ -66,12 +100,12 @@ A security-focused project built around automation, protection, and reliability.
 ### <img src="./assets/Memory.png" width="22" alt=""> GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ayank-ssh&show_icons=true&hide_border=true&theme=tokyonight&rank_icon=github" height="170" alt="GitHub stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ayank-ssh&hide_border=true&theme=tokyonight" height="170" alt="GitHub streak">
+  <img src="https://github-stats-extended.vercel.app/api?username=Ayank-ssh&show_icons=true&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&icon_color=22D3EE" height="170" alt="GitHub stats">
+  <img src="https://github-readme-streak-stats.demolab.com/?user=Ayank-ssh&hide_border=true&background=0D1117&ring=A78BFA&fire=F472B6&currStreakLabel=22D3EE&currStreakNum=E6EDF3&sideLabels=C9D1D9&sideNums=E6EDF3&dates=8B949E" height="170" alt="GitHub streak">
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayank-ssh&layout=compact&hide_border=true&theme=tokyonight" height="170" alt="Top languages">
+  <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Ayank-ssh&layout=compact&hide_border=true&bg_color=0D1117&title_color=A78BFA&text_color=C9D1D9&icon_color=22D3EE" height="170" alt="Top languages">
 </p>
 
 ---
@@ -79,5 +113,7 @@ A security-focused project built around automation, protection, and reliability.
 <div align="center">
 
 ### <img src="./assets/Flower.png" width="20" alt=""> Always learning. Always building.
+
+<sub>Designed with a violet + cyan palette.</sub>
 
 </div>
